@@ -10,6 +10,7 @@ public class CheckoutPage extends BaseActionsPage {
     private final By regionSelect = By.id("order-postregion");
     private final By citySelect = By.id("order-postcity");
     private final By warehouseSelect = By.id("order-postaddress");
+   // private final By radio = By.xpath("//label[input[@type='radio' and @name='Order[payment_type]']" + " and contains(normalize-space(),'" + visibleText + "')]//input");
 
 
     public CheckoutPage(WebDriver browser) {
@@ -17,18 +18,18 @@ public class CheckoutPage extends BaseActionsPage {
     }
 
     public CheckoutPage enterName(String name) {
-        browser.findElement(nameField).sendKeys(name);
+        typing(nameField, name);
         return this;
     }
 
     public CheckoutPage enterLastName(String lastName) {
-        browser.findElement(lastNameField).sendKeys(lastName);
+        typing(lastNameField, lastName);
         return this;
     }
 
     public CheckoutPage enterPhone(String phone) {
-        browser.findElement(phoneField).sendKeys(phone);
-        return this;
+        typing(phoneField, phone);
+        return this; // а як би зробити так, щоб було нагадування, що не треба вводити +38
     }
 
     public CheckoutPage chooseRegion(String region) {

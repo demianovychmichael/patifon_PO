@@ -10,10 +10,17 @@ public class ProductPage extends BaseActionsPage {
         super(browser);
     }
 
-
     public CartPage addToCart() {
         click(addToCartButton);
         return new CartPage(browser);
+    }
+
+
+
+    // Альтернатива для Fluent API (ця пропозиція чату не спрацьовує)
+        public ProductPage addToCartAndStay() {
+        click(addToCartButton);
+        return this;
     }
 }
 

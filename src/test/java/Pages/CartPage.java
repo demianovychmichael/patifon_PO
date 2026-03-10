@@ -14,7 +14,7 @@ public class CartPage extends BaseActionsPage {
 
     public CartPage closeCart() {
         click(closeCartBtn);
-        return this;
+        return this;           // порада чата для chaining
     }
 
     public CheckoutPage goToCheckout() {
